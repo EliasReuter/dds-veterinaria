@@ -3,6 +3,8 @@ import javax.persistence.*;
 import javax.persistence.Id;
 import java.sql.Date;
 
+@Entity
+@Table(name = "fichaMedica")
 public class fichaMedica {
     @Id
     int idFichaMedica;

@@ -1,10 +1,10 @@
 package entities;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "profesional")
 public class profesional {
     @Id
     int idProfesional;

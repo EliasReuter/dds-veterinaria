@@ -1,10 +1,9 @@
 package entities;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "turno")
 public class turno {
     @Id
     int idTurno;

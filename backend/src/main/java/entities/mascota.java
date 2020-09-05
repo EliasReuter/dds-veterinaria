@@ -3,6 +3,8 @@ package entities;
 import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "mascota")
 public class mascota {
     @Id
     int idMascota;
