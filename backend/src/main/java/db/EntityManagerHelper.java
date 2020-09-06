@@ -1,5 +1,4 @@
 package db;
-
 import java.util.function.*;
 
 import javax.persistence.EntityManager;
@@ -28,13 +27,11 @@ public class EntityManagerHelper {
     }
 
     public static EntityManager getEntityManager() {
-       /* EntityManager manager = threadLocal.get();
+        EntityManager manager = threadLocal.get();
         if (manager == null || !manager.isOpen()) {
             manager = emf.createEntityManager();
             threadLocal.set(manager);
-        }*/
-        EntityManager manager = emf.createEntityManager();
-        threadLocal.set(manager);
+        }
         return manager;
     }
 
