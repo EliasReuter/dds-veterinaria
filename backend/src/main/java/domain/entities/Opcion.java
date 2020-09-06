@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Table(name = "opcion")
 public class Opcion {
     @Id
+    @GeneratedValue
     private int idOpcion;
     @Column(name = "descripcion")
     private String descripcion;

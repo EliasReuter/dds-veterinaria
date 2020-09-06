@@ -8,6 +8,7 @@ import java.util.ArrayList;
 @Table(name = "fichaMedica")
 public class FichaMedica {
     @Id
+    @GeneratedValue
     private int idFichaMedica;
 
     @OneToOne

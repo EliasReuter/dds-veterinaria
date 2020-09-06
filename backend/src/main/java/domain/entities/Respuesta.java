@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Table(name = "respuesta")
 public class Respuesta {
     @Id
+    @GeneratedValue
     private int idRespuesta;
     @Column(name = "idEncuesta")
     private int idEncuesta;

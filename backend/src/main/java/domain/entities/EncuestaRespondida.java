@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Table(name = "encuestarespondida")
 public class EncuestaRespondida {
     @Id
+    @GeneratedValue
     private int idEncuestaRespondida;
 
     @ManyToOne

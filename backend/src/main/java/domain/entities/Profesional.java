@@ -8,6 +8,7 @@ import java.util.List;
 @Table(name = "profesional")
 public class Profesional {
     @Id
+    @GeneratedValue
     private int idProfesional;
     @Column(name = "matricula")
     private int matricula;

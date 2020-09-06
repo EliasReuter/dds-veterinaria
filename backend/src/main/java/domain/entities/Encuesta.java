@@ -9,6 +9,7 @@ import javax.persistence.*;
 public class Encuesta {
 
     @Id
+    @GeneratedValue
     private int idEncuesta;
     @Column(name = "nombre")
     private String nombre;

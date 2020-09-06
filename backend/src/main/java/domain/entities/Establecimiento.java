@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Table(name = "establecimiento")
 public class Establecimiento {
     @Id
+    @GeneratedValue
     private int idEstablecimiento;
     @Column(name = "fechaAlta")
     private Date fechaAlta;

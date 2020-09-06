@@ -6,6 +6,7 @@ import java.util.ArrayList;
 @Table(name = "respuestaopcion")
 public class RespuestaOpcion {
     @Id
+    @GeneratedValue
     private int idRespuestaOpcion;
     @ManyToOne
     @JoinColumn(name = "idRespuesta", referencedColumnName = "idRespuesta")

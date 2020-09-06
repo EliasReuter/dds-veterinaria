@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table(name = "turno")
 public class Turno {
     @Id
+    @GeneratedValue
     private int idTurno;
     @Column(name="activo")
     private boolean activo;

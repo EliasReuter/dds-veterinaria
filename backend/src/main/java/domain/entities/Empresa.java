@@ -8,6 +8,7 @@ import java.util.List;
 public class Empresa {
 
     @Id
+    @GeneratedValue
     private int idEmpresa;
     @Column(name = "nombre")
     private String nombre;
