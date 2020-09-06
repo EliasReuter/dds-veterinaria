@@ -1,8 +1,7 @@
 package domain.entities;
+
 import javax.persistence.*;
-import javax.persistence.Id;
-import java.sql.Date;
-import java.util.ArrayList;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "fichaMedica")
@@ -13,22 +12,22 @@ public class FichaMedica {
 
     @OneToOne
     @JoinColumn(name = "idEncuestaRespondida")
-    private EncuestaRespondida idEncuestaRespondida;
+    private EncuestaRespondida encuestarespondida;
 
     @ManyToOne
     @JoinColumn(name = "idProfesional", referencedColumnName = "idProfesional")
-    private Profesional idProfesional;
+    private Profesional profesional;
 
     @ManyToOne
     @JoinColumn(name = "idEstablecimiento", referencedColumnName = "idEstablecimiento")
-    private Establecimiento idEstablecimiento;
+    private Establecimiento establecimiento;
 
     @ManyToOne
     @JoinColumn(name = "idMascota", referencedColumnName = "idMascota")
-    private Mascota idMascota;
+    private Mascota mascota;
 
     @Column(name = "descripcion")
-    private Date fechaCreacion;
+    private LocalDate fechaCreacion;
 
     public FichaMedica() {
 
@@ -38,23 +37,47 @@ public class FichaMedica {
         return idFichaMedica;
     }
 
-    public EncuestaRespondida getIdEncuestaRespondida() {
-        return idEncuestaRespondida;
+    public void setIdFichaMedica(int idFichaMedica) {
+        this.idFichaMedica = idFichaMedica;
     }
 
-    public Profesional getIdProfesional() {
-        return idProfesional;
+    public EncuestaRespondida getEncuestaRespondida() {
+        return encuestarespondida;
     }
 
-    public Establecimiento getIdEstablecimiento() {
-        return idEstablecimiento;
+    public void setEncuestaRespondida(EncuestaRespondida encuestaRespondida) {
+        this.encuestarespondida = encuestaRespondida;
     }
 
-    public Mascota getIdMascota() {
-        return idMascota;
+    public Profesional getProfesional() {
+        return profesional;
     }
 
-    public Date getFechaCreacion() {
+    public void setProfesional(Profesional profesional) {
+        this.profesional = profesional;
+    }
+
+    public Establecimiento getEstablecimiento() {
+        return establecimiento;
+    }
+
+    public void setEstablecimiento(Establecimiento establecimiento) {
+        this.establecimiento = establecimiento;
+    }
+
+    public Mascota getMascota() {
+        return mascota;
+    }
+
+    public void setMascota(Mascota mascota) {
+        this.mascota = mascota;
+    }
+
+    public LocalDate getFechaCreacion() {
         return fechaCreacion;
+    }
+
+    public void setFechaCreacion(LocalDate fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
     }
 }

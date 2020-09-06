@@ -1,5 +1,5 @@
 package domain.entities;
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
@@ -16,53 +16,83 @@ public class Encuesta {
     @Column(name = "descripcion")
     private String descripcion;
     @Column(name = "fechaAlta")
-    private Date fechaAlta;
+    private LocalDate fechaAlta;
     @Column(name = "fechaBaja")
-    private Date fechaBaja;
-
+    private LocalDate fechaBaja;
     @ManyToOne
     @JoinColumn(name = "idEmpresa", referencedColumnName = "idEmpresa")
-    private Empresa idEmpresa;
-
+    private Empresa empresa;
     @OneToMany(mappedBy = "encuesta", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-    private List<EncuestaRespondida> EncuestaRespondidas;
+    private List<EncuestaRespondida> encuestarespondidas;
     @OneToMany(mappedBy = "encuesta", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-    private List<Pregunta> Preguntas;
+    private List<Pregunta> preguntas;
 
     public Encuesta() {
-        this.Preguntas = new ArrayList<>();
-        this.EncuestaRespondidas = new ArrayList<>();
+        this.preguntas = new ArrayList<>();
+        this.encuestarespondidas = new ArrayList<>();
     }
 
     public int getIdEncuesta() {
         return idEncuesta;
     }
 
+    public void setIdEncuesta(int idEncuesta) {
+        this.idEncuesta = idEncuesta;
+    }
+
     public String getNombre() {
         return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getDescripcion() {
         return descripcion;
     }
 
-    public Date getFechaAlta() {
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public LocalDate getFechaAlta() {
         return fechaAlta;
     }
 
-    public Date getFechaBaja() {
+    public void setFechaAlta(LocalDate fechaAlta) {
+        this.fechaAlta = fechaAlta;
+    }
+
+    public LocalDate getFechaBaja() {
         return fechaBaja;
     }
 
-    public Empresa getIdEmpresa() {
-        return idEmpresa;
+    public void setFechaBaja(LocalDate fechaBaja) {
+        this.fechaBaja = fechaBaja;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
 
     public List<EncuestaRespondida> getEncuestaRespondidas() {
-        return EncuestaRespondidas;
+        return encuestarespondidas;
+    }
+
+    public void setEncuestaRespondidas(List<EncuestaRespondida> encuestaRespondidas) {
+        this.encuestarespondidas = encuestaRespondidas;
     }
 
     public List<Pregunta> getPreguntas() {
-        return Preguntas;
+        return preguntas;
+    }
+
+    public void setPreguntas(List<Pregunta> preguntas) {
+        this.preguntas = preguntas;
     }
 }

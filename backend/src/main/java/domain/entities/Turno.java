@@ -14,10 +14,10 @@ public class Turno {
     private int cantHoras;
     @ManyToOne
     @JoinColumn(name = "idProfesional", referencedColumnName = "idProfesional")
-    private Profesional idProfesional;
+    private Profesional profesional;
     @ManyToOne
     @JoinColumn(name = "idEstablecimiento", referencedColumnName = "idEstablecimiento")
-    private Establecimiento idEstablecimiento;
+    private Establecimiento establecimiento;
 
     public Turno() {
     }
@@ -26,19 +26,39 @@ public class Turno {
         return idTurno;
     }
 
+    public void setIdTurno(int idTurno) {
+        this.idTurno = idTurno;
+    }
+
     public boolean isActivo() {
         return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
 
     public int getCantHoras() {
         return cantHoras;
     }
 
-    public Profesional getIdProfesional() {
-        return idProfesional;
+    public void setCantHoras(int cantHoras) {
+        this.cantHoras = cantHoras;
     }
 
-    public Establecimiento getIdEstablecimiento() {
-        return idEstablecimiento;
+    public Profesional getProfesional() {
+        return profesional;
+    }
+
+    public void setProfesional(Profesional profesional) {
+        this.profesional = profesional;
+    }
+
+    public Establecimiento getEstablecimiento() {
+        return establecimiento;
+    }
+
+    public void setEstablecimiento(Establecimiento establecimiento) {
+        this.establecimiento = establecimiento;
     }
 }

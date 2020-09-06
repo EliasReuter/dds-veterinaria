@@ -1,5 +1,5 @@
 package domain.entities;
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
@@ -13,39 +13,59 @@ public class EncuestaRespondida {
 
     @ManyToOne
     @JoinColumn(name = "idEncuesta", referencedColumnName = "idEncuesta")
-    private Encuesta idEncuesta;
+    private Encuesta encuesta;
 
     @Column(name = "fechaCreacion")
-    private Date fechaCreacion;
+    private LocalDate fechacreacion;
 
     @OneToMany(mappedBy = "encuestarespondida", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-    private List<Respuesta> Respuestas;
+    private List<Respuesta> respuestas;
 
     @OneToOne
     @JoinColumn(name = "idFichaMedica")
-    private FichaMedica idFichaMedica;
+    private FichaMedica fichamedica;
 
     public EncuestaRespondida() {
-        this.Respuestas = new ArrayList<>();
+        this.respuestas = new ArrayList<>();
     }
 
     public int getIdEncuestaRespondida() {
         return idEncuestaRespondida;
     }
 
-    public Encuesta getIdEncuesta() {
-        return idEncuesta;
+    public void setIdEncuestaRespondida(int idEncuestaRespondida) {
+        this.idEncuestaRespondida = idEncuestaRespondida;
     }
 
-    public Date getFechaCreacion() {
-        return fechaCreacion;
+    public Encuesta getEncuesta() {
+        return encuesta;
+    }
+
+    public void setEncuesta(Encuesta encuesta) {
+        this.encuesta = encuesta;
+    }
+
+    public LocalDate getFechaCreacion() {
+        return fechacreacion;
+    }
+
+    public void setFechaCreacion(LocalDate fechaCreacion) {
+        this.fechacreacion = fechaCreacion;
     }
 
     public List<Respuesta> getRespuestas() {
-        return Respuestas;
+        return respuestas;
     }
 
-    public FichaMedica getIdFichaMedica() {
-        return idFichaMedica;
+    public void setRespuestas(List<Respuesta> respuestas) {
+        this.respuestas = respuestas;
+    }
+
+    public FichaMedica getFichaMedica() {
+        return fichamedica;
+    }
+
+    public void setFichaMedica(FichaMedica fichaMedica) {
+        this.fichamedica = fichaMedica;
     }
 }

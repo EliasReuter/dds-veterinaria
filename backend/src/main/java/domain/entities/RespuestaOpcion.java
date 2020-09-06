@@ -10,10 +10,10 @@ public class RespuestaOpcion {
     private int idRespuestaOpcion;
     @ManyToOne
     @JoinColumn(name = "idRespuesta", referencedColumnName = "idRespuesta")
-    private Respuesta idRespuesta;
+    private Respuesta respuesta;
     @ManyToOne
     @JoinColumn(name = "idOpcion", referencedColumnName = "idOpcion")
-    private Opcion idOpcion;
+    private Opcion opcion;
 
     public RespuestaOpcion() {
 
@@ -23,11 +23,23 @@ public class RespuestaOpcion {
         return idRespuestaOpcion;
     }
 
-    public Respuesta getIdRespuesta() {
-        return idRespuesta;
+    public void setIdRespuestaOpcion(int idRespuestaOpcion) {
+        this.idRespuestaOpcion = idRespuestaOpcion;
     }
 
-    public Opcion getIdOpcion() {
-        return idOpcion;
+    public Respuesta getRespuesta() {
+        return respuesta;
+    }
+
+    public void setRespuesta(Respuesta respuesta) {
+        this.respuesta = respuesta;
+    }
+
+    public Opcion getOpcion() {
+        return opcion;
+    }
+
+    public void setOpcion(Opcion opcion) {
+        this.opcion = opcion;
     }
 }

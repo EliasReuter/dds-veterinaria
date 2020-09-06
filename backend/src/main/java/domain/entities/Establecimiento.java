@@ -1,5 +1,5 @@
 package domain.entities;
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
@@ -11,9 +11,9 @@ public class Establecimiento {
     @GeneratedValue
     private int idEstablecimiento;
     @Column(name = "fechaAlta")
-    private Date fechaAlta;
+    private LocalDate fechaAlta;
     @Column(name = "fechaBaja")
-    private Date fechaBaja;
+    private LocalDate fechaBaja;
     @Column(name = "nombre")
     private String nombre;
     @Column(name = "direccion")
@@ -21,44 +21,76 @@ public class Establecimiento {
     @Column(name = "activo")
     private boolean activo;
     @OneToMany(mappedBy = "establecimiento", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-    private List<Turno> Turnos;
+    private List<Turno> turnos;
     @ManyToOne
     @JoinColumn(name = "idEmpresa", referencedColumnName = "idEmpresa")
-    private Empresa idEmpresa;
+    private Empresa empresa;
 
     public Establecimiento() {
-        this.Turnos = new ArrayList<>();
+        this.turnos = new ArrayList<>();
     }
 
     public int getIdEstablecimiento() {
         return idEstablecimiento;
     }
 
-    public Date getFechaAlta() {
+    public void setIdEstablecimiento(int idEstablecimiento) {
+        this.idEstablecimiento = idEstablecimiento;
+    }
+
+    public LocalDate getFechaAlta() {
         return fechaAlta;
     }
 
-    public Date getFechaBaja() {
+    public void setFechaAlta(LocalDate fechaAlta) {
+        this.fechaAlta = fechaAlta;
+    }
+
+    public LocalDate getFechaBaja() {
         return fechaBaja;
+    }
+
+    public void setFechaBaja(LocalDate fechaBaja) {
+        this.fechaBaja = fechaBaja;
     }
 
     public String getNombre() {
         return nombre;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public String getDireccion() {
         return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public boolean isActivo() {
         return activo;
     }
 
-    public List<Turno> getTurnos() {
-        return Turnos;
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
 
-    public Empresa getIdEmpresa() {
-        return idEmpresa;
+    public List<Turno> getTurnos() {
+        return turnos;
+    }
+
+    public void setTurnos(List<Turno> turnos) {
+        this.turnos = turnos;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
 }

@@ -15,6 +15,8 @@ public class Router {
 
         Spark.get("/profesionales", profesionalRestController::mostrarTodos);
 
+        Spark.get("/clientes", profesionalRestController::mostrarTodos);
+
         Spark.get("/profesionalesTest", profesionalRestController::mostrarTodosTest);
 
         Spark.get("/profesional/:id", profesionalRestController::mostrar);
