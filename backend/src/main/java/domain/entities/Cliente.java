@@ -16,7 +16,7 @@ public class Cliente {
     private String apellido;
     @Column(name = "dni")
     private int dni;
-    @OneToMany(mappedBy = "cliente", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "cliente", cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     private List<Mascota> mascotas;
     @ManyToOne
     @JoinColumn(name = "idEmpresa", referencedColumnName = "idEmpresa")

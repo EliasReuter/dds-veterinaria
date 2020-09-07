@@ -26,7 +26,7 @@ public class FichaMedica {
     @JoinColumn(name = "idMascota", referencedColumnName = "idMascota")
     private Mascota mascota;
 
-    @Column(name = "descripcion")
+    @Column(name = "fechaCreacion", columnDefinition = "date")
     private LocalDate fechaCreacion;
 
     public FichaMedica() {
