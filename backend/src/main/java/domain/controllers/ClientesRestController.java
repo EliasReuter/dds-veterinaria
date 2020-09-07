@@ -28,10 +28,7 @@ public class ClientesRestController {
         List<Cliente> clientes = FactoryRepositorio.get(Cliente.class).buscarTodos();
         System.out.println(clientes.getClass().getName());
         Gson gson = new Gson();
-        //Type listType = new TypeToken<List<Cliente>>() {}.getType();
-        //String jsonProfesionales = "[" + clientes.stream().map(x -> gson.toJson(x)).collect(Collectors.joining(",")) + "]";
-        //).toJson(clientes, ArrayList.class);
-        String jsonProfesionales = gson.toJson(clientes.get(0));
+        String jsonProfesionales = gson.toJson(clientes);
         response.type("application/json");
         return jsonProfesionales;
     }

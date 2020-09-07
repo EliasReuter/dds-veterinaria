@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a386b74-d977-44fe-b753-63a10c367cda" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/config/Config.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/domain/controllers/ClientesRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/controllers/ClientesRestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/domain/entities/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/entities/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/entities/FichaMedica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/entities/FichaMedica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sql/datos.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/datos.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,9 +89,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ContextTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.ContextTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Server" />
+        <item itemvalue="JUnit.ContextTest" />
         <item itemvalue="JUnit.All in veterinaria (1)" />
         <item itemvalue="Application.main" />
         <item itemvalue="JUnit.All in veterinaria" />
@@ -115,7 +128,7 @@
       <workItem from="1599402798548" duration="11036000" />
       <workItem from="1599424268211" duration="2267000" />
       <workItem from="1599427262164" duration="5289000" />
-      <workItem from="1599435356036" duration="1973000" />
+      <workItem from="1599435356036" duration="3850000" />
     </task>
     <servers />
   </component>
@@ -143,22 +156,22 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="200" y="263" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1599436700604" />
-    <state width="794" height="341" key="GridCell.Tab.0.bottom" timestamp="1599437355035">
+    <state width="794" height="94" key="GridCell.Tab.0.bottom" timestamp="1599438170362">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="794" height="341" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1599437355035" />
-    <state width="794" height="341" key="GridCell.Tab.0.center" timestamp="1599437355035">
+    <state width="794" height="94" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1599438170362" />
+    <state width="794" height="94" key="GridCell.Tab.0.center" timestamp="1599438170362">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="794" height="341" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1599437355035" />
-    <state width="794" height="341" key="GridCell.Tab.0.left" timestamp="1599437355034">
+    <state width="794" height="94" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1599438170362" />
+    <state width="794" height="94" key="GridCell.Tab.0.left" timestamp="1599438170362">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="794" height="341" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1599437355034" />
-    <state width="794" height="341" key="GridCell.Tab.0.right" timestamp="1599437355035">
+    <state width="794" height="94" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1599438170362" />
+    <state width="794" height="94" key="GridCell.Tab.0.right" timestamp="1599438170362">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="794" height="341" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1599437355035" />
+    <state width="794" height="94" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1599438170362" />
     <state x="370" y="160" key="Maven.ArtifactSearchDialog" timestamp="1599252768484">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>

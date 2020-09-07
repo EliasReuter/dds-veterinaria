@@ -32,7 +32,7 @@ CREATE TABLE `cliente` (
   UNIQUE KEY `idCliente` (`idCliente`),
   KEY `idEmpresa` (`idEmpresa`),
   CONSTRAINT `cliente_ibfk_1` FOREIGN KEY (`idEmpresa`) REFERENCES `empresa` (`idEmpresa`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,6 +41,7 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
+INSERT INTO `cliente` VALUES (1,'Cliente','Favorito',123,1);
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,9 +114,12 @@ CREATE TABLE `encuestarespondida` (
   `idEncuestaRespondida` int(11) NOT NULL AUTO_INCREMENT,
   `idEncuesta` int(11) NOT NULL,
   `fechaCreacion` datetime DEFAULT NULL,
+  `idFichaMedica` int(11) DEFAULT NULL,
   PRIMARY KEY (`idEncuestaRespondida`),
   UNIQUE KEY `idEncuestaRespondida` (`idEncuestaRespondida`),
   KEY `idEncuesta` (`idEncuesta`),
+  KEY `FK_kqmxso8qw7s5gs6mxja36hrwx` (`idFichaMedica`),
+  CONSTRAINT `FK_kqmxso8qw7s5gs6mxja36hrwx` FOREIGN KEY (`idFichaMedica`) REFERENCES `fichamedica` (`idFichaMedica`),
   CONSTRAINT `encuestarespondida_ibfk_1` FOREIGN KEY (`idEncuesta`) REFERENCES `encuesta` (`idEncuesta`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -126,7 +130,7 @@ CREATE TABLE `encuestarespondida` (
 
 LOCK TABLES `encuestarespondida` WRITE;
 /*!40000 ALTER TABLE `encuestarespondida` DISABLE KEYS */;
-INSERT INTO `encuestarespondida` VALUES (1,1,NULL);
+INSERT INTO `encuestarespondida` VALUES (1,1,NULL,1);
 /*!40000 ALTER TABLE `encuestarespondida` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -176,6 +180,7 @@ CREATE TABLE `fichamedica` (
   `idEstablecimiento` int(11) NOT NULL,
   `idMascota` int(11) NOT NULL,
   `fechaCreacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `descripcion` date DEFAULT NULL,
   PRIMARY KEY (`idFichaMedica`),
   UNIQUE KEY `idFichaMedica` (`idFichaMedica`),
   KEY `idEncuestaRespondida` (`idEncuestaRespondida`),
@@ -186,7 +191,7 @@ CREATE TABLE `fichamedica` (
   CONSTRAINT `fichamedica_ibfk_2` FOREIGN KEY (`idProfesional`) REFERENCES `profesional` (`idProfesional`),
   CONSTRAINT `fichamedica_ibfk_3` FOREIGN KEY (`idEstablecimiento`) REFERENCES `establecimiento` (`idEstablecimiento`),
   CONSTRAINT `fichamedica_ibfk_4` FOREIGN KEY (`idMascota`) REFERENCES `mascota` (`idMascota`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -195,6 +200,7 @@ CREATE TABLE `fichamedica` (
 
 LOCK TABLES `fichamedica` WRITE;
 /*!40000 ALTER TABLE `fichamedica` DISABLE KEYS */;
+INSERT INTO `fichamedica` VALUES (1,1,1,1,1,'2020-09-06 16:57:11',NULL);
 /*!40000 ALTER TABLE `fichamedica` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -213,7 +219,7 @@ CREATE TABLE `mascota` (
   UNIQUE KEY `idMascota` (`idMascota`),
   KEY `idCliente` (`idCliente`),
   CONSTRAINT `mascota_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`idCliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -222,6 +228,7 @@ CREATE TABLE `mascota` (
 
 LOCK TABLES `mascota` WRITE;
 /*!40000 ALTER TABLE `mascota` DISABLE KEYS */;
+INSERT INTO `mascota` VALUES (1,'asd',1),(2,'qwe',1);
 /*!40000 ALTER TABLE `mascota` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -252,7 +259,7 @@ CREATE TABLE `opcion` (
 
 LOCK TABLES `opcion` WRITE;
 /*!40000 ALTER TABLE `opcion` DISABLE KEYS */;
-INSERT INTO `opcion` VALUES (1,'Hace mucho',NULL,1,NULL,NULL),(2,'Hace poco',NULL,1,NULL,NULL);
+INSERT INTO `opcion` VALUES (1,'Hace mucho',_binary '',1,NULL,NULL),(2,'Hace poco',_binary '',1,NULL,NULL);
 /*!40000 ALTER TABLE `opcion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -286,7 +293,7 @@ CREATE TABLE `pregunta` (
 
 LOCK TABLES `pregunta` WRITE;
 /*!40000 ALTER TABLE `pregunta` DISABLE KEYS */;
-INSERT INTO `pregunta` VALUES (1,'¿Como se llama?',1,NULL,1,NULL,NULL),(2,'¿Hace cuanto nota los sintomas?',2,NULL,1,NULL,NULL);
+INSERT INTO `pregunta` VALUES (1,'¿Como se llama?',1,_binary '',1,NULL,NULL),(2,'¿Hace cuanto nota los sintomas?',2,_binary '',1,NULL,NULL);
 /*!40000 ALTER TABLE `pregunta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -305,7 +312,7 @@ CREATE TABLE `profesional` (
   `activo` bit(1) DEFAULT NULL,
   PRIMARY KEY (`idProfesional`),
   UNIQUE KEY `idProfesional` (`idProfesional`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -314,6 +321,7 @@ CREATE TABLE `profesional` (
 
 LOCK TABLES `profesional` WRITE;
 /*!40000 ALTER TABLE `profesional` DISABLE KEYS */;
+INSERT INTO `profesional` VALUES (1,1234,'Elias','Reuter',_binary ''),(2,1235,'Juan','Perez',_binary ''),(3,1235,'Dr','Who',_binary '');
 /*!40000 ALTER TABLE `profesional` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -332,6 +340,8 @@ CREATE TABLE `respuesta` (
   PRIMARY KEY (`idRespuesta`),
   UNIQUE KEY `idRespuesta` (`idRespuesta`),
   KEY `idPregunta` (`idPregunta`),
+  KEY `FK_mibku0f67m66glsxjxvi8buqc` (`idEncuestaRespondida`),
+  CONSTRAINT `FK_mibku0f67m66glsxjxvi8buqc` FOREIGN KEY (`idEncuestaRespondida`) REFERENCES `encuestarespondida` (`idEncuestaRespondida`),
   CONSTRAINT `respuesta_ibfk_1` FOREIGN KEY (`idPregunta`) REFERENCES `pregunta` (`idPregunta`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -419,7 +429,7 @@ CREATE TABLE `turno` (
   KEY `idEstablecimiento` (`idEstablecimiento`),
   CONSTRAINT `turno_ibfk_1` FOREIGN KEY (`idProfesional`) REFERENCES `profesional` (`idProfesional`),
   CONSTRAINT `turno_ibfk_2` FOREIGN KEY (`idEstablecimiento`) REFERENCES `establecimiento` (`idEstablecimiento`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -428,6 +438,7 @@ CREATE TABLE `turno` (
 
 LOCK TABLES `turno` WRITE;
 /*!40000 ALTER TABLE `turno` DISABLE KEYS */;
+INSERT INTO `turno` VALUES (1,1,1,_binary '',4),(2,1,1,_binary '',4);
 /*!40000 ALTER TABLE `turno` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -440,4 +451,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-09-05 11:03:40
+-- Dump completed on 2020-09-06 21:15:36

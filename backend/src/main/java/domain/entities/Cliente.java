@@ -16,6 +16,8 @@ public class Cliente {
     private String apellido;
     @Column(name = "dni")
     private int dni;
+    @Column(name = "edad")
+    private int edad;
     @OneToMany(mappedBy = "cliente", cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     private List<Mascota> mascotas;
     @ManyToOne
