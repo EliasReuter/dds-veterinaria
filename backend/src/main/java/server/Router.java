@@ -15,13 +15,22 @@ public class Router {
         ProfesionalRestController profesionalRestController = new ProfesionalRestController();
         ClientesRestController clientesRestController = new ClientesRestController();
 
+        Spark.get("/clientes", clientesRestController::mostrarTodos);
+
+        Spark.get("/tipoPreguntas", clientesRestController::mostrarTipoPregunta);
+
+        Spark.post("/profesionales", profesionalRestController::crear);
+
+        Spark.delete("/profesionales/:id", profesionalRestController::eliminar);
+
+        Spark.put("/profesionales/:id", profesionalRestController::modificar);
+
+        Spark.options("/profesionales/:id", profesionalRestController::existe);
+
+        Spark.get("/profesionales/:id", profesionalRestController::mostrar);
+
         Spark.get("/profesionales", profesionalRestController::mostrarTodos);
 
-        Spark.get("/clientes", clientesRestController::mostrarTodos);
-        Spark.get("/tipoPregunta", clientesRestController::mostrarTipoPregunta);
 
-        Spark.get("/profesionalesTest", profesionalRestController::mostrarTodosTest);
-
-        Spark.get("/profesional/:id", profesionalRestController::mostrar);
     }
 }

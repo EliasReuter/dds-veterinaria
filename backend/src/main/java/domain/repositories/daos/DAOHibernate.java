@@ -1,6 +1,8 @@
 package domain.repositories.daos;
 
 import db.EntityManagerHelper;
+
+import javax.persistence.Entity;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;

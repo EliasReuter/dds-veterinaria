@@ -18,9 +18,9 @@ public class Profesional {
     private String apellido;
     @Column(name = "activo")
     private boolean activo;
-    @OneToMany(mappedBy = "profesional", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "profesional", cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     private List<Turno> turnos;
-    @OneToMany(mappedBy = "profesional", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "profesional", cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     private List<FichaMedica> fichasmedicas;
 
     public Profesional() {
